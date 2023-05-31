@@ -4,6 +4,7 @@ import os
 import cv2
 import formatting.image as fi
 import random
+import pickle
 
 class TrainModel:
     def __init__(self, exercise):
@@ -34,6 +35,15 @@ class TrainModel:
         formatter = fi.ImageFormatter([])
         image_size = formatter.getImageSize()
         X = np.array(X).reshape(-1, image_size, image_size, 1)
+
+        pickle_out = open("X.pickle", "wb")
+        pickle.dump(X, pickle_out)
+        pickle_out.close()
+
+        pickle_out = open("y.pickle", "wb")
+        pickle.dump(y, pickle_out)
+        pickle_out.close()
+
 
     def shuffle_training_data(self):
         random.shuffle(self.training_data)
