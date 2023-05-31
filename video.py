@@ -1,9 +1,7 @@
 import pandas as pd
-import numpy as np
 import os
 import cv2
 import matplotlib.pyplot as plt
-from glob import glob
 import IPython.display as ipd
 from tqdm.notebook import tqdm
 import subprocess
@@ -64,7 +62,7 @@ class VideoFormatter:
         return self.image_data
 
     def convertVideoFormat(self):
-        self.video_path = self.video_path.replace('.*', '.mp4')
+        pass
 
     def showVideo(self):
         ipd.Video(self.video_path, width=700)
