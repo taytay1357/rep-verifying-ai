@@ -9,7 +9,7 @@ import pickle
 class TrainModel:
     def __init__(self, exercise):
         self.exercise = exercise
-        self.datadir = f"C:/Users/Josh_2/Desktop/VideoFormatter/training_images/{self.exercise}/"
+        self.datadir = f"C:/Users/Josh_2/Desktop/RepVerfyingAI/training_images/{self.exercise}/"
         self.categories = ["good", "bad"]
         self.training_data = []
 
