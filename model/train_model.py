@@ -9,7 +9,7 @@ import pickle
 class TrainModel:
     def __init__(self, exercise):
         self.exercise = exercise
-        self.datadir = f"C:/Users/Josh_2/Desktop/RepVerfyingAI/training_images/{self.exercise}/"
+        self.datadir = f"C:/Users/Josh_2/Desktop/RepVerifyingAI/training_images/{self.exercise}/"
         self.categories = ["good", "bad"]
         self.training_data = []
 
@@ -32,8 +32,7 @@ class TrainModel:
         for features, label in self.training_data:
             X.append(features)
             y.append(label)
-        formatter = fi.ImageFormatter([])
-        image_size = formatter.getImageSize()
+        image_size = 100
         X = np.array(X).reshape(-1, image_size, image_size, 1)
 
         pickle_out = open("X.pickle", "wb")
